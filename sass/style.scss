@@ -1,0 +1,140 @@
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: 'Outfit', sans-serif;
+	font-size: 1.6rem;
+	background-color: hsl(217, 54%, 11%);
+	color: #fff;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	border-top: 1px solid hsl(215, 51%, 70%);
+	border-color: hsl(215, 32%, 27%);
+}
+.card {
+    max-width: 350px;
+	padding: 1.3em;
+    margin: 1em;
+	border-radius: 15px;
+	box-shadow: 0 2px 15px 0 hsla(216, 54%, 11%, 0.34);
+	background-color: rgb(20, 37, 61);
+	transition: transform 0.3s;
+	&:hover {
+		transform: scale(1.055);
+	}
+	&__img {
+        position: relative;
+        cursor: pointer;
+		&-pic {
+			width: 100%;
+			border-radius: 8px;
+			cursor: pointer;
+			z-index: 0;
+		}
+        &-shadow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            transform: translate(-50%,-50%);
+            background-color: hsla(178, 100%, 50%, 0.316);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        &-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        &:hover &-icon, &:hover &-shadow  {
+                opacity: 1;
+            }
+	}
+
+	&__info {
+		&-title {
+			font-size: 2rem;
+			padding: 0.5em 0;
+			cursor: pointer;
+			transition: color 0.3s;
+			&:hover {
+				color: hsl(178, 100%, 50%);
+			}
+		}
+
+		&-description {
+			color: rgb(72, 100, 138);
+			padding-bottom: 1.2em;
+		}
+
+		&--value-date {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 1em;
+
+			&--eth,
+			&--day {
+				display: flex;
+				flex-direction: row;
+			}
+			&--eth {
+				&-p {
+					color: hsl(178, 100%, 50%);
+					padding-left: 0.5em;
+				}
+			}
+			&--day {
+				&-p {
+					color: rgb(72, 100, 138);
+					padding-left: 0.5em;
+				}
+			}
+		}
+
+		&-author {
+			display: flex;
+			align-items: center;
+			padding-top: 1em;
+			&-picture {
+				width: 30px;
+				border: 1px solid;
+				border-radius: 50%;
+			}
+
+			&-description {
+				color: rgb(107, 132, 167);
+				padding-left: 0.5em;
+			}
+			&--name {
+				color: #fff;
+				cursor: pointer;
+				transition: color 0.3s;
+				&:hover {
+					color: hsl(178, 100%, 50%);
+				}
+			}
+		}
+	}
+}
